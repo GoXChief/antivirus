@@ -1,0 +1,950 @@
+{
+	"info": {
+		"_postman_id": "b68dea69-e21c-46ff-a2fb-1e6a22f73b13",
+		"name": "requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39125017"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"admin@test.com\",\r\n  \"password\": \"admin\",\r\n  \"deviceId\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:2225/auth/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"user1\",\r\n  \"email\": \"user12@test.com\",\r\n  \"password\": \"user1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:2225/auth/register",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createLicense",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsImF1dGgiOlsicmVhZCIsIlJPTEVfQURNSU4iLCJtb2RpZmljYXRpb24iXSwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc1ODkyNDM4MiwiZXhwIjoxNzU4OTI0NjgyfQ.5lkVu9iQXanVuy-e1A-YZHH2ZfGpS9LNODN3J2vCGxg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": \"202\",\r\n  \"ownerId\": \"103\",\r\n  \"licenseTypeId\": \"52\",\r\n  \"count\": \"5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:2225/api/license/create",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"license",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activateLicense",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyQHRlc3QuY29tIiwiYXV0aCI6WyJyZWFkIiwiUk9MRV9VU0VSIl0sInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJpYXQiOjE3NDQzOTMzMDIsImV4cCI6MTc0NDM5MzYwMn0.YkD0-HTBBI-VHo43rjE5a40pp5L-gfhlOuDUhIji-pk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"activationCode\": \"1d190874-2076-48ab-8c74-fd361e6b0d8e\",\r\n    \"name\": \"DESKTOP-9MS1G7L\",\r\n    \"mac_address\": \"7A:79:19:4C:95:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:2225/api/license/activate",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"license",
+						"activate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "infoLicense",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyQHRlc3QuY29tIiwiYXV0aCI6WyJyZWFkIiwiUk9MRV9VU0VSIl0sInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJpYXQiOjE3NDQzODMxNDAsImV4cCI6MTc0NDM4MzQ0MH0.bvfaFWNO-qKXNsTkO2qZmIosaBTHQCNzZe2yxwU0uxc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"activationCode\": \"8e914f0a-d08e-4de1-bc4c-1dbacf047b04\",\r\n    \"name\": \"DESKTOP-9MS1G7L1\",\r\n    \"mac_address\": \"7A:79:19:4C:95:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:2225/api/license/info",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"license",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "renewalLicence",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyQHRlc3QuY29tIiwiYXV0aCI6WyJyZWFkIiwiUk9MRV9VU0VSIl0sInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJpYXQiOjE3NDQzOTI1MzUsImV4cCI6MTc0NDM5MjgzNX0.ScW-hvjfy6jtOTPZAYFauJz0FqkIiTmHWjcSmmUgwxw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"activationCode\": \"e6d87e6e-7f01-44ba-8478-586bb1f8b420\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:2225/api/license/renewal",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"license",
+						"renewal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsImF1dGgiOlsicmVhZCIsIlJPTEVfQURNSU4iLCJtb2RpZmljYXRpb24iXSwiaWF0IjoxNzMzNjg1MjAyLCJleHAiOjE3MzM2ODg4MDJ9.cKSWHXuJMIceEG4OjohAfMtxCklyKFAALL_DUw_r-u4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Basic\",\r\n    \"isBlocked\": \"false\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:2225/api/product/create",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"product",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsImF1dGgiOlsicmVhZCIsIlJPTEVfQURNSU4iLCJtb2RpZmljYXRpb24iXSwiaWF0IjoxNzMyOTc5NzQ4LCJleHAiOjE3MzI5ODMzNDh9.xIK0BFKskf3ogwv1ZvhXqdi58h3fKylqtv4zBhDNd_A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": \"53\",\r\n    \"name\": \"SomeOne\",\r\n    \"isBlocked\": \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:2225/api/product/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"product",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createLicenseType",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsImF1dGgiOlsicmVhZCIsIlJPTEVfQURNSU4iLCJtb2RpZmljYXRpb24iXSwiaWF0IjoxNzMzNjg1MjAyLCJleHAiOjE3MzM2ODg4MDJ9.cKSWHXuJMIceEG4OjohAfMtxCklyKFAALL_DUw_r-u4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"duration\": 130,\r\n    \"description\": \"130\",\r\n    \"name\": \"Basic\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:2225/api/type/create",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"type",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateLicenseType",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsImF1dGgiOlsicmVhZCIsIlJPTEVfQURNSU4iLCJtb2RpZmljYXRpb24iXSwiaWF0IjoxNzMyOTgzOTYxLCJleHAiOjE3MzI5ODc1NjF9.CXNJOAdyEc6rf4f0kNDOQBlKkvbjdn5GDGHkiDagF0Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"duration\": 50,\r\n    \"description\": \"SomeOne\",\r\n    \"name\": \"SomeOne\",\r\n    \"id\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:2225/api/type/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"type",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateLicense",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsImF1dGgiOlsicmVhZCIsIlJPTEVfQURNSU4iLCJtb2RpZmljYXRpb24iXSwiaWF0IjoxNzMzMDU0MzU3LCJleHAiOjE3MzMwNTc5NTd9.iiWhTSUuaqwsaXFwuAXBghTKhL7h4lqQZLRnF5pIngY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 552,\r\n    \"ownerId\": 2,\r\n    \"productId\": 2,\r\n    \"typeId\": 2,\r\n    \"isBlocked\": \"true\",\r\n    \"description\": \"Test\",\r\n    \"deviceCount\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:2225/api/license/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"license",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LicensesAll",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyQHRlc3QuY29tIiwiYXV0aCI6WyJyZWFkIiwiUk9MRV9VU0VSIl0sInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJpYXQiOjE3NDQzNzk5NTYsImV4cCI6MTc0NDM4MDI1Nn0.BOg3vyJvcmQANUhI6dhhpC_sGejzIlA7E8d85WLAfp4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"DESKTOP-9MS1G7L\",\r\n    \"mac_address\": \"7A:79:19:4C:95:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:2225/api/license/all/licenses",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"license",
+						"all",
+						"licenses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LicensesRenewalAll",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyQHRlc3QuY29tIiwiYXV0aCI6WyJyZWFkIiwiUk9MRV9VU0VSIl0sInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJpYXQiOjE3NDQzOTE4ODgsImV4cCI6MTc0NDM5MjE4OH0.tQbgpGSrJEpMeKqmJNHFywbTyu3Fg9zBS4yOc4neLhU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:2225/api/license/all/renewal",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"license",
+						"all",
+						"renewal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyQHRlc3QuY29tIiwiYXV0aCI6WyJyZWFkIiwiUk9MRV9VU0VSIl0sImlhdCI6MTczNjA4NzE0OCwiZXhwIjoxNzM2MDkwNzQ4fQ.ZHI6Qzc6eq1I0NurIFwC-1Vw3_7PK4PmfCO16iHYejI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:2225/api/profile/info",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"profile",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RefreshToken",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwiZGV2aWNlSWQiOjEsImlhdCI6MTc0MDMyMTQ0NCwiZXhwIjoxNzQwNDA3ODQ0fQ.WWu4wJyLcFJFS3qj_qqfajXdKjRBABIZhoehI10x3lA\",\r\n  \"deviceId\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:2225/auth/refresh",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActualSignatures",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsImF1dGgiOlsicmVhZCIsIlJPTEVfQURNSU4iLCJtb2RpZmljYXRpb24iXSwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc0MzM1MzY3NywiZXhwIjoxNzQzMzUzOTc3fQ.2RXHf3lXVKKleE6_uOmWDTVbPvX0EA085_yYQGsVNk8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:2225/api/signatures/actual",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"signatures",
+						"actual"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignatureDiff",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsImF1dGgiOlsicmVhZCIsIlJPTEVfQURNSU4iLCJtb2RpZmljYXRpb24iXSwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc0MzM1NTcwMiwiZXhwIjoxNzQzMzU2MDAyfQ.QBaRcrkzeZIG6rQ0BVpWbLGbvKSTP_WrCeEp20o7h7Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"since\": \"2025-03-29\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:2225/api/signatures/updated-after",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"signatures",
+						"updated-after"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSignatureByGUIDS",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsImF1dGgiOlsicmVhZCIsIlJPTEVfQURNSU4iLCJtb2RpZmljYXRpb24iXSwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc0MzM1MzY3NywiZXhwIjoxNzQzMzUzOTc3fQ.2RXHf3lXVKKleE6_uOmWDTVbPvX0EA085_yYQGsVNk8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"guids\": [\r\n        \"6b89dea8-0538-4b4d-bcbc-04b96ca9a53d\",\r\n        \"550e8400-e29b-41d4-a716-446655440001\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:2225/api/signatures/by-guids",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"signatures",
+						"by-guids"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignatureAdd",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsImF1dGgiOlsicmVhZCIsIlJPTEVfQURNSU4iLCJtb2RpZmljYXRpb24iXSwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc0NDY1OTIzMywiZXhwIjoxNzQ0NjU5NTMzfQ.Ir-CnG1P_HIBy9CtiXWkonuEpL3G7dlaBASBsRw7ELc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"threatName\": \"Example Threat6\",\r\n    \"firstBytes\": \"ABCD1234EFGH5678\",\r\n    \"remainderLength\": 4,\r\n    \"fileType\": \"malware\",\r\n    \"offsetStart\": 0,\r\n    \"offsetEnd\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:2225/api/signatures/add",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"signatures",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignatureDelete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsImF1dGgiOlsicmVhZCIsIlJPTEVfQURNSU4iLCJtb2RpZmljYXRpb24iXSwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc0MzM2NzI3NywiZXhwIjoxNzQzMzY3NTc3fQ.FaHJfSZhg5dWLKu50eefsefoYIykiOum1CVmkaZi5ss",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"signatureUUID\": \"91e21903-31c6-4121-a3f9-6fa590b1c26e\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:2225/api/signatures/delete",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"signatures",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignatureUpdate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsImF1dGgiOlsicmVhZCIsIlJPTEVfQURNSU4iLCJtb2RpZmljYXRpb24iXSwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc0MzM3MDE1MywiZXhwIjoxNzQzMzcwNDUzfQ.VDdknaft7INs0HPFm1XuqonTAL5Yie0jG7i65vqmFuA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"signatureId\": \"02ef345b-51d5-47ac-9982-59f2acc6b91a\",\r\n    \"threatName\": \"Example Threat22222\",\r\n    \"firstBytes\": \"ABCD1234EFGH5678\",\r\n    \"remainderLength\": \"\",\r\n    \"fileType\": \"malwareeee\",\r\n    \"offsetStart\": 0,\r\n    \"offsetEnd\": 101\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:2225/api/signatures/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"signatures",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignatureByStatus",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsImF1dGgiOlsicmVhZCIsIlJPTEVfQURNSU4iLCJtb2RpZmljYXRpb24iXSwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc0MzM2ODI5MywiZXhwIjoxNzQzMzY4NTkzfQ.8d9qxb0OhZYLHhAFBiiKaWPuQsvvt2dPpxnHl_PwmWU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"status\": \"DELETED\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:2225/api/signatures/by-status",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"signatures",
+						"by-status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignatureAudit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsImF1dGgiOlsicmVhZCIsIlJPTEVfQURNSU4iLCJtb2RpZmljYXRpb24iXSwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc0MzM2ODkwMCwiZXhwIjoxNzQzMzY5MjAwfQ.P9SQvT_KDIpOg7wPmalnhHAjrYYuoAHUTk74D_OoX3U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:2225/api/signatures/audit",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"signatures",
+						"audit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Manifest",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsImF1dGgiOlsicmVhZCIsIlJPTEVfQURNSU4iLCJtb2RpZmljYXRpb24iXSwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc0NDk5NzQ1MCwiZXhwIjoxNzQ0OTk3NzUwfQ.Z4XcRG31C2oPtT9pzrI54u0lCaLwT3z7tlLoPsKYErY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:2225/api/signatures/manifest",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"signatures",
+						"manifest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:2225/api/signatures/data",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2225",
+					"path": [
+						"api",
+						"signatures",
+						"data"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsImF1dGgiOlsicmVhZCIsIlJPTEVfQURNSU4iLCJtb2RpZmljYXRpb24iXSwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc0NDU4MjM3NywiZXhwIjoxNzQ0NTgyNjc3fQ.wU1tid-eq33BOgRtF0b8JQt__DvADpjHcQ9Ks4d5Z_g",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
